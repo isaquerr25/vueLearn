@@ -13,18 +13,14 @@ const square = (v) => v * v
 const double = (v) => v * 2
 const addOne = (v) => v + 1
 
-function pipe(...args){
-
-  return function (v){
-  args.forEach((item,index ) => {
-   v = item(v)
-  })
-  return v
+function pipe(...args) {
+  return function (v) {
+    args.forEach((item, index) => {
+      v = item(v)
+    })
+    return v
   }
-
-
-const res = pipe(square, double, addOne)
-res(3) // 19; addOne(double(square(3)))
+}
 </script>
 
 <template>
